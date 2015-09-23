@@ -38,8 +38,8 @@ class HashesController < ApplicationController
 
     address = { "correct" => "Sears", "incorrect" => "Willis"}
 
-    @result = "replace this string with your answer"
-    render 'hashes'
+    @result = name["correct"]
+    render "hashes"
   end
 
   def num_4
