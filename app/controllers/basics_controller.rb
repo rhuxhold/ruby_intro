@@ -181,7 +181,7 @@ class BasicsController < ApplicationController
     age = rand(50) + 18
     phrase4 = "years old. What am I doing with my life?"
 
-    @result = "replace this string with your answer"
+    @result = "#{phrase1} #{money} #{currency} #{phrase2} #{restaurant} #{phrase3} #{age} #{phrase4}"
     render "basics"
   end
 
@@ -193,7 +193,7 @@ class BasicsController < ApplicationController
 
     name = "Jane Doe"
 
-    @result = "replace this string with your answer"
+    @result = name.length 
     render "basics"
   end
 
@@ -205,7 +205,7 @@ class BasicsController < ApplicationController
 
     name = "Jane Doe"
 
-    @result = "replace this string with your answer"
+    @result = name.gsub('e', '3')
     render "basics"
   end
 end
