@@ -38,7 +38,7 @@ class HashesController < ApplicationController
 
     address = { "correct" => "Sears", "incorrect" => "Willis"}
 
-    @result = name["correct"]
+    @result = address["correct"]
     render "hashes"
   end
 
@@ -73,8 +73,8 @@ class HashesController < ApplicationController
                     }
                   }
 
-    @result = "replace this string with your answer"
-    render 'hashes'
+    @result = attraction["address"]["street"]
+    render "hashes"
   end
 
   def num_6
@@ -100,6 +100,7 @@ class HashesController < ApplicationController
     #============================================
 
     attraction = { "first_name" => "Sears"}
+    attraction["last_name"] = "Tower"
 
     @result = "#{attraction['first_name']} #{attraction['last_name']}"
     render "hashes"
@@ -116,7 +117,7 @@ class HashesController < ApplicationController
       {"first" => "Lanny", "last" => "Bose"}
     ]
 
-    @result = people[1]["last"] # => Bose
+    @result = people[0]["last"] # => Bose
     render 'hashes'
   end
 
@@ -133,7 +134,7 @@ class HashesController < ApplicationController
       {"name" => "Macbook air 13in", "price" => 999}
     ]
 
-    @result = "replace this string with your answer"
+    @result = products[1]["name"]
     render 'hashes'
   end
 
@@ -143,17 +144,16 @@ class HashesController < ApplicationController
     # down to the view
     #============================================
 
-    data = {
-      "users" => [
+    data = [
         {"name" => "Joel Stephens", "email" => "joel.stephens19@example.com"},
         {"name" => "Ricky Walters", "email" => "ricky.walters24@example.com"},
         {"name" => "Eleanor Taylor", "email" => "eleanor.taylor67@example.com"},
         {"name" => "Soham Pierce", "email" => "soham.pierce58@example.com"},
         {"name" => "Virgil Cox", "email" => "virgil.cox84@example.com"}
       ]
-    }
+    
 
-    @result = "replace this string with your answer"
+    @result = data[2]["email"]
     render 'hashes'
   end
 end
